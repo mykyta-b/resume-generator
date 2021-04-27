@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\DTO\Helper;
-
 
 trait BasicRequestDTO
 {
