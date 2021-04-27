@@ -8,35 +8,12 @@ namespace App\DTO;
 class ResumeDTO
 {
     /**
-     * @var string
-     */
-    private string $userName;
-
-    /**
      * @var array
      */
     private array $errors = [];
 
     private UserDTO $user;
     private RepoListDTO $repos;
-
-    /**
-     * @return string
-     */
-    public function getUserName(): string
-    {
-        return $this->userName;
-    }
-
-    /**
-     * @param string $userName
-     * @return ResumeDTO
-     */
-    public function setUserName(string $userName): self
-    {
-        $this->userName = $userName;
-        return $this;
-    }
 
     /**
      * @return array
