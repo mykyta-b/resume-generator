@@ -1,0 +1,45 @@
+parameters:
+    app.consumer.http_client.options:
+        timeout: 15
+    app.consumer.request:
+        allowed_responses: [200, 301, 302, 304, 307, 404]
+        options:
+            http_errors: false
+    app.parser.api:
+        users: 'https://api.github.com/users/<login>'
+        repos: 'https://api.github.com/users/<login>/repos?sort=created&direction=asc'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: [ 'controller.service_arguments' ]
+
+    published_message.listener:
+        class: App\EventListener\ExceptionListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+
+    date_time_normalizer:
+        class: Symfony\Component\Serializer\Normalizer\DateTimeNormalizer
+        tags: [ serializer.normalizer ]
+
+    array_denormalizer:
+        class: Symfony\Component\Serializer\Normalizer\ArrayDenormalizer
+        tags: [ serializer.normalizer ]
+
+    json_encoder:
+        class: Symfony\Component\Serializer\Encoder\JsonEncoder
+        tags: [ serializer.encoder ]

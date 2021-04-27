@@ -1,0 +1,125 @@
+{% extends "default.html.twig" %}
+
+{% block title %}
+    {% if htmlData.name is defined %}
+        {{ htmlData.name }} resume
+    {% else %}
+        Resume generator
+    {% endif %}
+{% endblock %}
+{% block body %}
+    <div class="container" id="run">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm" >
+                <article role="main">
+                    <div class="py-2 my-1 text-center position-relative mx-2">
+                        <div class="position-absolute w-100 top-50  translate-middle" style="z-index: 2">
+                        </div>
+
+                    </div>
+                    {% if htmlData.error is defined %}
+                        {{ htmlData.error }}
+                    {% endif %}
+                    {% if htmlData.header is defined %}
+                    <div class="row top-50">
+                        {% if htmlData.header.avatar is defined %}
+                        <div class="col col-sm-2" >
+                            <a href="{{ htmlData.githubUrl }}/{{ htmlData.login }}" ><img src="{{ htmlData.header.avatar }}" width="80"></a>
+                        </div>
+                        {% endif %}
+                        <div class="col col-sm-7">
+                            <header role="banner"><h1>{{ htmlData.name }}</h1></header>
+                            <p>a.k.a <a href="{{ htmlData.githubUrl }}/{{ htmlData.login }}" >{{ htmlData.login }}</a></p>
+                        </div>
+                        <div class="col col-sm-auto">
+                        </div>
+                    </div>
+                    <div class="py-2 my-1 text-center position-relative">
+                        <div class="position-absolute w-100 top-50  translate-middle" style="z-index: 2">
+                        </div>
+                        <div class="position-absolute w-100 top-50 start-0 border-muted border-top"></div>
+                    </div>
+                    {% endif %}
+
+                    {% if htmlData.website is defined %}
+                        <div class="row top-50">
+                            <div class="col col-sm-1" >
+                                Web Site
+                            </div>
+                            <div class="col col-sm-7">
+                                <a href="{{ htmlData.website }}" >{{ htmlData.website }}</a>
+                            </div>
+                            <div class="col col-sm-auto">
+                            </div>
+                        </div>
+                        <div class="py-2 my-1 text-center position-relative">
+                            <div class="position-absolute w-100 top-50  translate-middle" style="z-index: 2">
+                            </div>
+                            <div class="position-absolute w-100 top-50 start-0 border-muted border-top"></div>
+                        </div>
+                    {% endif %}
+
+                    {% if htmlData.profile is defined %}
+                        <div class="row top-50">
+                            <div class="col col-sm-1" >
+                                Github Profile
+                            </div>
+                            <div class="col col-sm-7">
+                                On GitHub since {{ htmlData.profile.sinceYear }}, {{ htmlData.name }}
+                                is a developer based in {{ htmlData.profile.location }}
+                                with <a href="{{ htmlData.githubUrl }}/{{ htmlData.login }}?tab=repositories" >{{ htmlData.profile.repoNumber }} public repositories</a>
+                                and <a href="{{ htmlData.githubUrl }}/{{ htmlData.login }}?tab=followers" >{{ htmlData.profile.followers }} followers</a>.
+
+                            </div>
+                            <div class="col col-sm-auto">
+                            </div>
+                        </div>
+                        <div class="py-2 my-1 text-center position-relative">
+                            <div class="position-absolute w-100 top-50  translate-middle" style="z-index: 2">
+                            </div>
+                            <div class="position-absolute w-100 top-50 start-0 border-muted border-top"></div>
+                        </div>
+                    {% endif %}
+
+                    {% if htmlData.languages is defined %}
+                        <div class="row top-50">
+                            <div class="col col-sm-1" >
+                                Languages
+                            </div>
+                            <div class="col col-sm-7">
+                                <table class="table table-hover">
+                                    <tbody>
+                                    {% for language in htmlData.languages.stats %}
+                                    {% if loop.index % htmlData.languages.rowLength == 1 %}
+                                        <tr>
+                                    {% endif %}
+                                        {% if language is not empty %}
+                                        <td><a href="{{ htmlData.githubUrl }}/search?q=user%3A{{ htmlData.login }}&l={{ language.name }}">{{ language.name }}({{ language.percentage }}%)</a></td>
+                                        {% else %}
+                                        <td></td>
+                                        {% endif %}
+                                        {% if loop.index % htmlData.languages.rowLength == 0 %}
+                                        </tr>
+                                    {% endif %}
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="col col-sm-auto">
+                            </div>
+                        </div>
+                        <div class="py-2 my-1 text-center position-relative">
+                            <div class="position-absolute w-100 top-50  translate-middle" style="z-index: 2">
+                            </div>
+                            <div class="position-absolute w-100 top-50 start-0 border-muted border-top"></div>
+                        </div>
+                    {% endif %}
+                </article>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,7 @@
+#index:
+#    path: /
+#    controller: App\Controller\ResumeGenerator::index
+
+#css:
+#    path: /css
+#    static_dir: public/css
