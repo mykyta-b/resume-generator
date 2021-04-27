@@ -3,6 +3,7 @@ node_modules/
 vendor/
 var/
 dist/
+.env
 
 # Compiled Java class files
 *.class

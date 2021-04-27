@@ -41,9 +41,6 @@
     "codeception/module-asserts": {
         "version": "dev-master"
     },
-    "codeception/module-cli": {
-        "version": "dev-master"
-    },
     "codeception/module-symfony": {
         "version": "dev-master"
     },

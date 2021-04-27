@@ -1,15 +1,11 @@
 <?php
 declare(strict_types=1);
 
-
 namespace App\Tests\Helpers\Traits;
 
-
-use App\DTO\UserDTO;
 use App\Service\Gateway\Consumer\ApiConsumer;
 use App\Service\Gateway\Consumer\Client\HttpClient;
 use App\Service\Gateway\Consumer\Client\RequestAdapter;
-use App\Service\Gateway\UserApiGateway;
 use Codeception\Stub;
 use Codeception\Stub\Expected;
 use GuzzleHttp\Client;
