@@ -21,12 +21,11 @@ use Codeception\Test\Unit;
  */
 class ResumeParserTest extends Unit
 {
-
     /**
      * @test
      * @throws \Exception
      */
-    public function givenValidUserWhenParseResumeThenReturnResponse()
+    public function givenValidUserWhenParseResumeThenReturnResponse(): void
     {
         $user = (new UserDTO())
             ->setLocation('Los Angeles, California')
@@ -62,7 +61,7 @@ class ResumeParserTest extends Unit
      * @test
      * @throws \Exception
      */
-    public function givenUserApiErrorWhenParseResumeThenReturnResponse()
+    public function givenUserApiErrorWhenParseResumeThenReturnResponse(): void
     {
         $user = (new UserDTO())
             ->setMessage('Not Found');
@@ -95,7 +94,7 @@ class ResumeParserTest extends Unit
      * @test
      * @throws \Exception
      */
-    public function givenReposApiErrorWhenParseResumeThenReturnResponse()
+    public function givenReposApiErrorWhenParseResumeThenReturnResponse(): void
     {
         $user = (new UserDTO())
             ->setLocation('Los Angeles, California')

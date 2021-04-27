@@ -214,8 +214,8 @@ class UserDTO
 
     /**
      * @param \DateTime|null $created
+     * @return UserDTO
      * @SerializedName ("created_at")
-     * @return RepoDTO
      */
     public function setCreated(?\DateTime $created): self
     {

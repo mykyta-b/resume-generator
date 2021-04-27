@@ -1,0 +1,9 @@
+parameters:
+	level: 6
+	checkMissingIterableValueType: false
+	paths:
+		- src
+		- tests/unit/
+		- tests/_data
+	excludes_analyse:
+		- */tests/_support/*

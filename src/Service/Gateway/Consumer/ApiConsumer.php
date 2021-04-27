@@ -18,7 +18,7 @@ class ApiConsumer
     private RequestAdapter $requestAdapter;
 
     /**
-     * @var mixed
+     * @var array
      */
     private array $config;
 
@@ -50,7 +50,7 @@ class ApiConsumer
         return $content;
     }
 
-    private function getWaitInterval()
+    private function getWaitInterval(): int
     {
         return $this->config['timeout'] ?? self::DEFAULT_TIMEOUT;
     }

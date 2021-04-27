@@ -22,7 +22,7 @@ class ErrorDTO
 
     /**
      * @param string|null $message
-     * @return UserDTO
+     * @return ErrorDTO
      */
     public function setMessage(?string $message): self
     {

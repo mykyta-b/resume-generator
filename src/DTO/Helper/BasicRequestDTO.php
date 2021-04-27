@@ -68,7 +68,7 @@ trait BasicRequestDTO
 
     /**
      * @param bool $redirects
-     * @return BasicRequestDTO
+     * @return self
      */
     public function setRedirects(bool $redirects): self
     {

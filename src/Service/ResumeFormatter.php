@@ -110,7 +110,7 @@ class ResumeFormatter
 
     /**
      * @param array $repos
-     * @return mixed
+     * @return int
      */
     private function getAllRepoSizeSum(array $repos): int
     {

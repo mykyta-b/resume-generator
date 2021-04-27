@@ -42,7 +42,7 @@ class ResumeController
      *     methods={"GET"}
      * )
      */
-    public function indexAction()
+    public function indexAction(): Response
     {
         return $this->render('index.html.twig', []);
     }
@@ -56,7 +56,7 @@ class ResumeController
      * @param string $login
      * @return Response
      */
-    public function resumeGeneratorAction(string $login)
+    public function resumeGeneratorAction(string $login): Response
     {
         $resumeDTO = $this->parser->parseUserResume($login);
 
