@@ -46,6 +46,7 @@
     "require-dev": {
         "codeception/module-asserts": "dev-master",
         "codeception/module-symfony": "dev-master",
+        "dg/bypass-finals": "dev-master",
         "phpstan/phpstan": "0.12.x-dev",
         "symfony/browser-kit": "5.x-dev",
         "symfony/css-selector": "5.x-dev",

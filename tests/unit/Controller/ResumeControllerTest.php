@@ -138,6 +138,5 @@ class ResumeControllerTest extends Unit
             ->disableOriginalConstructor()
             ->onlyMethods(['parseUserResume'])
             ->getMock();
-
     }
 }

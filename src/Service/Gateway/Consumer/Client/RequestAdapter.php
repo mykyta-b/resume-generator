@@ -64,7 +64,7 @@ class RequestAdapter
             return ((string)$result->getBody());
         } catch (GuzzleException $e) {
             $logMessage =  vsprintf(self::REQUEST_ERROR, [$e->getCode(), $e->getMessage()]);
-            $this->logger->info($logMessage);
+            $this->logger->error($logMessage);
             return self::EMPTY_RESPONSE;
         }
     }

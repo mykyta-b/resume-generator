@@ -52,7 +52,8 @@ class UserApiGateway implements ApiGatewayInterface
             $user = $this->serializer->deserialize($jsonResponse, UserDTO::class, 'json');
         } catch (\Throwable $e) {
             $this->logger->error($e->getMessage());
-            $user = new UserDTO();
+            $message = 'User api does not respond';
+            $user = (new UserDTO())->setMessage($message);
         }
         return $user;
     }

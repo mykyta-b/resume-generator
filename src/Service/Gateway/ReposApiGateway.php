@@ -50,7 +50,7 @@ class ReposApiGateway implements ApiGatewayInterface
 
     public function getByLogin(string $login): RepoListDTO
     {
-        $reposDTO = new RepoListDTO();
+        $repoListDTO = new RepoListDTO();
         try {
             $page = self::START_PAGE_NUMBER;
             do {
@@ -59,20 +59,20 @@ class ReposApiGateway implements ApiGatewayInterface
 
                 $error = $this->serializer->deserialize($jsonResponse, ErrorDTO::class, 'json');
                 if (!empty($error->getMessage())) {
-                    $reposDTO->setMessage($error->getMessage());
+                    $repoListDTO->setMessage($error->getMessage());
                     throw new RequestErrorException($error->getMessage());
                 }
 
                 $repos = $this->serializer->deserialize($jsonResponse, RepoDTO::class . '[]', 'json');
-                $reposDTO->addRepos($repos);
+                $repoListDTO->addRepos($repos);
 
             } while ($page++ < self::LAST_PAGE_NUMBER and count($repos) == self::REPOS_PER_PAGE);
         } catch (\Throwable $e) {
             $this->logger->error($e->getMessage());
-            $reposDTO->setMessage($e->getMessage());
+            $repoListDTO->setMessage($e->getMessage());
         }
 
-        return $reposDTO;
+        return $repoListDTO;
     }
 
     private function createRequest(string $login, ?int $page = null): RequestDTO
