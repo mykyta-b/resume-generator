@@ -5,15 +5,16 @@ namespace App\Service\Gateway;
 
 use App\DTO\RequestDTO;
 use App\DTO\UserDTO;
-use App\Service\Gateway\ApiGatewayInterface;
 use App\Service\Gateway\Consumer\ApiConsumer;
-use App\Tests\Helpers\Traits\UserApiMockTrait;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
 class UserApiGateway implements ApiGatewayInterface
 {
+    private const BAD_API_RESPONSE = 'Bad response of github user api';
+    private const EMPTY_API_RESPONSE = 'Empty response from user api';
+
     /**
      * @var ApiConsumer
      */
@@ -50,9 +51,12 @@ class UserApiGateway implements ApiGatewayInterface
             $request = $this->createUserRequest($login);
             $jsonResponse = $this->consumer->request($request);
             $user = $this->serializer->deserialize($jsonResponse, UserDTO::class, 'json');
+            if ($user == (new UserDTO())) {
+                throw new \Exception(self::EMPTY_API_RESPONSE);
+            }
         } catch (\Throwable $e) {
             $this->logger->error($e->getMessage());
-            $message = 'User api does not respond';
+            $message = self::BAD_API_RESPONSE;
             $user = (new UserDTO())->setMessage($message);
         }
         return $user;

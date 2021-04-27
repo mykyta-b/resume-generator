@@ -57,7 +57,7 @@ class RequestAdapter
 
             if (!in_array($statusCode, $this->getAllowedResponses())) {
                 $logMessage =  vsprintf(self::REQUEST_INFO, [ $statusCode]);
-                $this->logger->info($logMessage);
+                $this->logger->warning($logMessage);
                 return self::EMPTY_RESPONSE;
             }
 

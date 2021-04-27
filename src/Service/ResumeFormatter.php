@@ -65,6 +65,9 @@ class ResumeFormatter
 
     private function formatLanguages(array $repos): array
     {
+        if (is_array($repos) and count($repos) === 0) {
+            return [];
+        }
         $sum = $this->getAllRepoSizeSum($repos);
         $grouppedLanguages = $this->countLanguageRepoSum($repos);
         $languages = $this->getLanguageToRepoSizeRatio($grouppedLanguages, $sum);

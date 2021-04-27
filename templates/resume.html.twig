@@ -42,7 +42,7 @@
                     </div>
                     {% endif %}
 
-                    {% if htmlData.website is defined %}
+                    {% if htmlData.website is defined and htmlData.website is not empty %}
                         <div class="row top-50">
                             <div class="col col-sm-1" >
                                 Web Site
@@ -82,7 +82,7 @@
                         </div>
                     {% endif %}
 
-                    {% if htmlData.languages is defined %}
+                    {% if htmlData.languages is defined and htmlData.languages.stats is not empty  %}
                         <div class="row top-50">
                             <div class="col col-sm-1" >
                                 Languages

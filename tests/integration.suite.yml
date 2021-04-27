@@ -1,0 +1,13 @@
+actor: IntegrationTester
+path: integration
+class_name: IntegrationTester
+modules:
+  enabled:
+    - Asserts
+    - Cli
+    - Symfony:
+        app_path: 'src'
+        environment: 'test'
+        rebootable_client: false
+        debug: false # < this setting should be false
+    - \App\Tests\Helper\Integration

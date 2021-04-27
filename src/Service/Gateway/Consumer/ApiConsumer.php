@@ -22,7 +22,10 @@ class ApiConsumer
      */
     private array $config;
 
-
+    /**
+     * @param RequestAdapter $requestAdapter
+     * @param ParameterBagInterface $params
+     */
     public function __construct(RequestAdapter $requestAdapter, ParameterBagInterface $params)
     {
         $this->requestAdapter = $requestAdapter;

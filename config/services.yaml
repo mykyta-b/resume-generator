@@ -2,7 +2,7 @@ parameters:
     app.consumer.http_client.options:
         timeout: 15
     app.consumer.request:
-        allowed_responses: [200, 301, 302, 304, 307, 404]
+        allowed_responses: [200, 404]
         options:
             http_errors: false
     app.parser.api:
