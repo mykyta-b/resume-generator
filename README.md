@@ -8,7 +8,7 @@ github account
 use your github username+password to get up to 5000 req/hour.
 
 ## Notes
-- During the repo percentage calculation script does not take in account repositories \
+- During the repo percentage calculation script does not take in account repositories
 where language was not specified.
 
 ## Installation
