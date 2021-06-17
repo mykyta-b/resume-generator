@@ -1,0 +1,123 @@
+header h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+#gitname {
+    position: relative;
+    float: left;
+    height: 30px;
+    width: 75%;
+    border: 2px solid #444;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-family: Georgia, Garamond, "Times New Roman", Times, serif;
+    color: #444;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.enlarge-medium {  font-size: 15px }
+
+#generate {
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    width: 20%;
+    height: 44px;
+    font-family: Georgia, Garamond, "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: #fff;
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.21, rgb(31,31,31)), color-stop(0.61, rgb(51,51,51)) );
+    background-image: -moz-linear-gradient( center bottom, rgb(31,31,31) 21%, rgb(51,51,51) 61% );
+    border: 1px solid #444;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#generate:hover {  cursor: pointer }
+
+.yui-gb {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 59.9em) {
+    #inner {
+        padding: 5 5 5 5;
+        margin: 0 auto;
+        background: #f5f5f5;
+        border: solid #666;
+        border-width: 8px 0 2px 0;
+        box-shadow: 0 1px 3px #000;
+    }
+    header h1 {
+        font-size: 2.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+    }
+
+    header h2 {
+        font-size: 1.5em;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+    }
+
+    #doc2 {
+        width: 100%;
+        padding-bottom: 1em;
+    }
+    #actions{
+        display: none;
+    }
+
+    h1{
+        font-size: 2em;
+    }
+    h2{
+        font-size: 1.5em;
+    }
+    p.enlarge {
+        font-size: 1.4em;
+        line-height: 1.2em;
+    }
+    li {
+        line-height: 1.6em;
+    }
+    h3, h4{
+        font-size: 1.3em;
+    }
+    p{
+        font-size: 1.2em;
+        line-height: 1.1em;
+    }
+    .org p, .job p {
+        margin: 0.75em 0 1.5em 0;
+    }
+    .first h2, .first h1{
+        padding-left: 0.5em;
+    }
+
+    .yui-gf div.first {
+        width: 20%;
+    }
+
+    .yui-gf .yui-u {  width: 80% }
+
+}
+
+@media screen and (min-width: 60em) {
+    #inner {
+        padding: 10px 80px;
+        margin: 0 auto;
+        background: #f5f5f5;
+        border: solid #666;
+        border-width: 8px 0 2px 0;
+        box-shadow: 0 1px 3px #000;
+    }
+}

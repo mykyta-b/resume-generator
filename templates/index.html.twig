@@ -1,0 +1,36 @@
+{% extends "default.html.twig" %}
+
+{% block title %}
+    Resume generator
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm" >
+                    <article role="main">
+                        <form id="run" :action="form.action" method="get" @submit="checkForm" >
+
+                            <div class="col col-sm-8">
+                                <header role="banner"><h1>Resume generator</h1></header>
+                                <hr class="bg-danger border-2 border-top border-dark">
+                                <input id="gitname" type="text" name="gitname" v-model="gitname" placeholder="Enter your GitHub username and click on generate" autofocus />
+                                <button type="submit" id="generate" class="button">Generate</button>
+                                <p v-if="errors.length">
+                                    <b>Please correct the following error(s):</b>
+                                    <ul>
+                                        <li v-for="error in errors">{{  '{{' }} error {{  '}}' }}</li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="col col-sm-auto">
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+{% endblock %}

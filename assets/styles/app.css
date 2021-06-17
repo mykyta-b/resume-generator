@@ -1,0 +1,32 @@
+header h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border: none;
+}
+
+#generate {
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    width: 30%;
+    height: 30px;
+    border: 1px solid #444;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+#gitname {
+    position: relative;
+    float: left;
+    height: 30px;
+    width: 65%;
+    border: 2px solid #444;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 5px;
+}
