@@ -13,9 +13,10 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
 /**
- * @see Class is intended to parse responses
- * from https://docs.github.com/en/rest/reference/repos
+ * Class is intended to parse responses
+ * from repositories github api
  * and put them to DTO
+ * @see https://docs.github.com/en/rest/reference/repos
  */
 class ReposApiGateway
 {
